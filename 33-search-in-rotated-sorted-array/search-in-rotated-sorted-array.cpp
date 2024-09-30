@@ -4,13 +4,16 @@ public:
     {
         int low = 0;
         int high = nums.size()-1;
+        //Initially set low = 0 and high = size -1
         while(low<=high)
         {
             int mid = (low+high)/2;
+            // If mid equals target it directly returns the index
             if(nums[mid]==target)
             {
                 return mid;
             }
+            // If the 
             if(nums[low]<=nums[mid])
             {
                 if(nums[low]<=target && target<=nums[mid])
