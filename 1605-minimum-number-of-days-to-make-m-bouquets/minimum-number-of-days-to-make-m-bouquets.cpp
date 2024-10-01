@@ -1,25 +1,25 @@
 class Solution {
 public:
-    bool possible(vector<int>& arr,int maxd,int m,int k)
+    bool possible(vector<int>& arr,int maxdays,int m,int k)
     {
-        int b=0,f=0;
+        int bouquet=0,flower=0;
         for(int i=0;i<arr.size();i++)
         {
-            if(arr[i]<=maxd)
+            if(arr[i]<=maxdays)
             {
-                f++;
+                flower++;
             }
             else 
             {
-                f=0;
+                flower=0;
             }
-            if(f==k)
+            if(flower==k)
             {
-                b++;
-                f=0;
+                bouquet++;
+                flower=0;
             }
         }
-        if(b>=m)
+        if(bouquet>=m)
             return true;
         return false;
     }
