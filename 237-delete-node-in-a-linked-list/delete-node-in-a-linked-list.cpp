@@ -25,3 +25,10 @@ public:
         delete(temp);
     }
 };
+/*
+    void deleteNode(ListNode* node)
+    {
+        node->next = node->next->val;
+        node->next = node->next->next;
+    }
+*/
