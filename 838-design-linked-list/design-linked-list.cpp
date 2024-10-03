@@ -76,16 +76,15 @@ public:
     
     void addAtIndex(int index, int val) 
     {
-        // if(head==NULL)
-        //     return;
          if(index>size || index<0)
             return;
         else if(index==0)
         {
-             Node* newNode = new Node(val);
-            newNode->next = head;
-            head = newNode;
-            size++;
+            //  Node* newNode = new Node(val);
+            // newNode->next = head;
+            // head = newNode;
+            // size++;
+            addAtHead(val);
         }
         else 
         {
