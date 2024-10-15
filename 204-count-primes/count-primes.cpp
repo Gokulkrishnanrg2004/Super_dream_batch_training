@@ -13,7 +13,7 @@ public:
             }
         }
         int count=0;
-        for (int p = 2; p < n; p++)
+        for (int p = 2; p <n; p++)
             if (prime[p])
                 count++;
 
