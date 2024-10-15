@@ -8,7 +8,8 @@ public:
         {
             xorr = xorr ^ nums[i];
         }    
-        long right = (xorr&(-xorr)); 
+        // long right = (xorr&(-xorr)); 
+        int right = (xorr&(xorr-1))^xorr;
         int b1=0,b2=0;
         for(int i=0;i<n;i++)
         {
