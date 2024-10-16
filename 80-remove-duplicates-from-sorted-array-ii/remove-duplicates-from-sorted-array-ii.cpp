@@ -3,7 +3,7 @@ public:
     int removeDuplicates(vector<int>& nums) 
     {
         int index = 0,count=0,value = nums[0];
-        for(auto val:nums)
+        for(auto val : nums)
         {
             if(value==val)
                 count++;
