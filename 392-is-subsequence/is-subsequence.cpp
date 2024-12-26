@@ -15,5 +15,5 @@ public:
             j++;
         }
         return i==n1;
-    }
+    } 
 };
