@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string removespaces(const string& str)
+    string removespaces(string str)
     {
         stringstream ss(str);
         string word,result;
@@ -8,16 +8,15 @@ public:
         while(ss >> word)
         {
             if(!result.empty())
-                result+=" ";    
-            result+=word;
+                result += " ";
+            result += word;
         }
         return result;
     }
-    string reverse(const string& str)
+    string reverse(string str)
     {
         stringstream ss(str);
         string word,result;
-
         stack<string>words;
         while(ss >> word)
         {
@@ -27,14 +26,17 @@ public:
         {
             result += words.top();
             words.pop();
+
             if(!words.empty())
+            {
                 result+=" ";
+            }
         }
         return result;
     }
     string reverseWords(string s) 
     {
-        string str = removespaces(s);    
+        string str = removespaces(s);
         string result = reverse(str);
         return result;
     }
