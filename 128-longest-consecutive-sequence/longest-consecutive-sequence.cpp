@@ -10,14 +10,14 @@ public:
         {
             if(nums[i] - nums[i-1] == 1)
             {
-                flag=1;
+                // flag=1;
                 count++;
             }
             else if(nums[i] != nums[i-1])
             {
                 maxlen = max(maxlen,count);
                 count=1;
-                flag=0;
+                // flag=0;
             }
         }    
         maxlen = max(maxlen,count);
