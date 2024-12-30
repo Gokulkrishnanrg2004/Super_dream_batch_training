@@ -45,14 +45,14 @@ public:
                 current = current->next;
             }
         }
-            if(temp1!=nullptr)
-            {
-                current->next = temp1;
-            }
-            else if(temp2!=nullptr)
-            {
-                current->next = temp2;
-            }
-            return dummyNode->next;
+        if(temp1!=nullptr)
+        {
+            current->next = temp1;
+        }
+        else if(temp2!=nullptr)
+        {
+            current->next = temp2;
+        }
+        return dummyNode->next;
 	}
 };	
