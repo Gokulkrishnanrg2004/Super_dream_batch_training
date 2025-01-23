@@ -12,7 +12,7 @@ public:
                 ans.push_back(nums[i]);
             }
         }
-        // ans.erase(unique(ans.begin(),ans.end()),ans.end());
+        ans.erase(unique(ans.begin(),ans.end()),ans.end());
         if (ans.empty() || ans[0] != 1) 
         {
             return 1; 
@@ -20,10 +20,10 @@ public:
         
         for (int i = 1; i < ans.size(); i++) 
         {
-            if(ans[i] == ans[i-1])
-            {
-                continue;
-            }
+            // if(ans[i] == ans[i-1])
+            // {
+            //     continue;
+            // }
             if (ans[i] != ans[i-1] + 1) 
             {
                 return ans[i-1] + 1;
