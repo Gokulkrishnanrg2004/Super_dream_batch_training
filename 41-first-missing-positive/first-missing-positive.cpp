@@ -20,9 +20,9 @@ public:
         
         for (int i = 1; i < ans.size(); i++) 
         {
-            if (ans[i] != ans[i - 1] + 1) 
+            if (ans[i] != ans[i-1] + 1) 
             {
-                return ans[i - 1] + 1;
+                return ans[i-1] + 1;
             }
         }
         return ans.back() + 1;
