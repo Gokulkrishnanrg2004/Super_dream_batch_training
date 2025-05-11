@@ -4,15 +4,20 @@ public:
         int left = 1;
         int right = *max_element(piles.begin(), piles.end());
         
-        while (left < right) {
+        while (left < right) 
+        {
             int mid = left + (right - left) / 2;
             int total = 0;
-            for (int pile : piles) {
+            for (int pile : piles) 
+            {
                 total += (pile + mid - 1) / mid;
             }
-            if (total <= h) {
+            if (total <= h) 
+            {
                 right = mid;
-            } else {
+            } 
+            else 
+            {
                 left = mid + 1;
             }
         }
