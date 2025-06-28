@@ -1,24 +1,18 @@
-class Solution 
-{
+class Solution {
     public:
-    int fib(int n) 
+    int f(int n,vector<int>&dp)
     {
-        return fibonacci(n);    
-    }
-    int fibonacci(int n)
-    {
-        vector<int>memo(n+1,-1);
-        return fibonaccihelper(n,memo);
-    }
-    int fibonaccihelper(int n,vector<int>& memo)
-    {
-        if(n<=1)
+        if(n <= 1)
         {
             return n;
         }
-        if(memo[n] != -1)
-            return memo[n];
-        memo[n] = fibonaccihelper(n-1,memo) + fibonaccihelper(n-2,memo);
-        return memo[n];
+        if(dp[n] != -1) return dp[n];
+
+        return dp[n] = f(n-1,dp) + f(n-2,dp);
+    }
+    int fib(int n) 
+    {
+        vector<int>dp(n+1,-1);
+        return f(n,dp);   
     }
 };
