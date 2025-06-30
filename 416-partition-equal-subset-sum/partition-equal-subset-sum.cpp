@@ -1,26 +1,27 @@
 class Solution {
-public:
-    bool canPartition(vector<int>& nums) 
+    public:
+    bool isSubsetSum(int n, vector<int>& arr, int sum, vector<vector<int>>& memo) 
     {
-        int sum = 0;
-        for(int num : nums)
-        {
-            sum += num;
-        }    
-        if(sum % 2 != 0)
-        {
-            return false;
-        }
-        int target = sum / 2;
-        vector<bool>dp(target + 1);
-        dp[0] = true;
-        for(int num : nums)
-        {
-            for(int i = target;i>=num;i--)
-            {
-                dp[i] = dp[i] || dp[i-num];
-            }
-        }
-        return dp[target];
+        if (sum == 0) return true;
+        if (n == 0) return false;
+    
+        if (memo[n - 1][sum] != -1) return memo[n - 1][sum];
+
+        if (arr[n - 1] > sum)
+            return memo[n - 1][sum] = isSubsetSum(n - 1, arr, sum, memo);
+
+        return memo[n - 1][sum] = isSubsetSum(n - 1, arr, sum, memo) || isSubsetSum(n - 1, arr, sum - arr[n - 1], memo);
+    }
+    bool canPartition(vector<int>& arr) 
+    {
+        int totalSum = accumulate(arr.begin(), arr.end(), 0);
+
+        if (totalSum % 2 != 0) return false;
+
+        int target = totalSum / 2;
+        int n = arr.size();
+        vector<vector<int>> memo(n, vector<int>(target + 1, -1));
+
+        return isSubsetSum(n, arr, target, memo);   
     }
 };
