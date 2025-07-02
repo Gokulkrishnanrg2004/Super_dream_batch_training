@@ -2,17 +2,22 @@ class Solution {
 public:
     int kthFactor(int n, int k) 
     {
-        for(int i=1;i<=n;i++)
+        vector<int> small,large;
+        for(int i=1;i*i<=n;i++)
         {
             if(n%i == 0)
             {
-                k--;
-            }
-            if(k == 0)
-            {
-                return i;
+                small.push_back(i);
+                if(i != n/i)
+                {
+                    large.push_back(n/i);
+                }
             }
         }    
-        return -1;
+        for(int i=large.size()-1;i>=0;i--)
+        {
+            small.push_back(large[i]);
+        }
+        return (k<=small.size()) ? small[k-1] : -1;
     }
 };
