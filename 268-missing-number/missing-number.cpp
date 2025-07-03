@@ -12,13 +12,12 @@ public:
         //     }
         // }    
         // return nums[n-1]+1;
-        int res = nums.size();
-        
-        for (int i = 0; i < nums.size(); i++) 
+        int n = nums.size();
+        int total = n * (n + 1) / 2;
+        for (int num : nums) 
         {
-            res += i - nums[i];
+            total -= num;
         }
-        
-        return res;
+        return total;
     }
 };
