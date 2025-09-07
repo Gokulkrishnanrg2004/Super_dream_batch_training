@@ -22,7 +22,7 @@ class Solution {
         {
             if(isPalindrome(s,start,end-1))
             {
-                path.push_back(s.substr(start,end-start));
+                path.push_back(s.substr(start,end - start));
                 backtrack(s,end,path,result);
                 path.pop_back();
             }
